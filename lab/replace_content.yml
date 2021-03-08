@@ -1,0 +1,40 @@
+- hosts: host01
+  tasks:
+  - name: "Replace Title host01"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: 'HOST_X'
+      replace: 'HOST_1'
+      backup: yes
+
+  - name: "Replace Color host01"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: 'border-color: #fff transparent #fff transparent;'
+      replace: 'border-color: rgb(0, 255, 0) transparent rgb(0, 255, 0) transparent;'
+      backup: yes
+
+- hosts: host02
+  tasks:
+  - name: "Replace Title host02"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: 'HOST_X'
+      replace: 'HOST_2'
+      backup: yes
+
+  - name: "Replace Color host02"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: 'border-color: #fff transparent #fff transparent;'
+      replace: 'border-color: rgb(255, 0, 0) transparent rgb(255, 0, 0) transparent;'
+      backup: yes
+
+- hosts: host03
+  tasks:
+  - name: "Replace Title host03"
+    replace: 
+      path: /var/www/default/index.html
+      regexp: 'HOST_X'
+      replace: 'HOST_3'
+      backup: yes
